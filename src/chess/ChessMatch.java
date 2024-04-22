@@ -2,7 +2,10 @@ package chess;
 
 import java.util.ArrayList;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.stream.Collectors;
+=======
+>>>>>>> 28d8d8444fbda283be04f7546ca168148d8336e7
 
 import boardgame.Board;
 import boardgame.Piece;
@@ -15,7 +18,10 @@ public class ChessMatch {
 	private int turn;
 	private Color currentPlayer;
 	private Board board;
+<<<<<<< HEAD
 	private boolean check;
+=======
+>>>>>>> 28d8d8444fbda283be04f7546ca168148d8336e7
 	
 	private List<Piece> piecesOnTheBoard = new ArrayList<>();
 	private List<Piece> capturedPieces = new ArrayList<>();
@@ -35,10 +41,13 @@ public class ChessMatch {
 		return currentPlayer;
 	}
 	
+<<<<<<< HEAD
 	public boolean getCheck() {
 		return check;
 	}
 	
+=======
+>>>>>>> 28d8d8444fbda283be04f7546ca168148d8336e7
 	public ChessPiece[][] getPieces() {
 		ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
 		for (int i=0; i<board.getRows(); i++) {
@@ -61,6 +70,7 @@ public class ChessMatch {
 		validateSourcePosition(source);
 		validateTargetPosition(source, target);
 		Piece capturedPiece = makeMove(source, target);
+<<<<<<< HEAD
 		
 		if (testCheck(currentPlayer)) {
 			undoMove(source, target, capturedPiece);
@@ -69,6 +79,8 @@ public class ChessMatch {
 		
 		check = (testCheck(opponent(currentPlayer))) ? true : false;
 		
+=======
+>>>>>>> 28d8d8444fbda283be04f7546ca168148d8336e7
 		nextTurn();
 		return (ChessPiece)capturedPiece;
 	}
@@ -86,6 +98,7 @@ public class ChessMatch {
 		return capturedPiece;
 	}
 	
+<<<<<<< HEAD
 	private void undoMove(Position source, Position target, Piece capturedPiece) {
 		Piece p = board.removePiece(target);
 		board.placePiece(p, source);
@@ -97,6 +110,8 @@ public class ChessMatch {
 		}
 	}
 	
+=======
+>>>>>>> 28d8d8444fbda283be04f7546ca168148d8336e7
 	private void validateSourcePosition(Position position) {
 		if (!board.thereIsAPiece(position)) {
 			throw new ChessException("There is no piece on source position");
@@ -120,6 +135,7 @@ public class ChessMatch {
 		currentPlayer = (currentPlayer == Color.WHITE) ? Color.BLACK : Color.WHITE;
 	}
 	
+<<<<<<< HEAD
 	private Color opponent(Color color) {
 		return (color == Color.WHITE) ? Color.BLACK : Color.WHITE;
 	}
@@ -146,6 +162,8 @@ public class ChessMatch {
 		return false;
 	}
 	
+=======
+>>>>>>> 28d8d8444fbda283be04f7546ca168148d8336e7
 	private void placeNewPiece(char column, int row, ChessPiece piece) {
 		board.placePiece(piece, new ChessPosition(column, row).toPosition());
 		piecesOnTheBoard.add(piece);
@@ -166,4 +184,8 @@ public class ChessMatch {
         placeNewPiece('e', 8, new Rook(board, Color.BLACK));
         placeNewPiece('d', 8, new King(board, Color.BLACK));
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 28d8d8444fbda283be04f7546ca168148d8336e7
